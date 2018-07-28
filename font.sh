@@ -9,10 +9,10 @@ source $SRC_DIR/log.sh
 function installHermit()
 {
   if [[ ! -d ~/.font/hermit ]]; then
-    mkdir -p ~/.font/{hermit,tmp}
+    mkdir -p ~/.font/hermit
     # stream to tar without downloading to disk and unzip to the target location :)
     wget -qO - https://pcaro.es/d/otf-hermit-1.21.tar.gz | tar xz -C ~/.font/hermit
-    msg_prompt "Donwload and unpacking to ~/.font/hermit"
+    msg_prompt "Donwloading and unpacking to ~/.font/hermit"
     rsync -r ~/.font/hermit/ /Users/$USER/Library/Fonts --exclude="LICENSE"
   else
     msg_nested_done "Font already installed. - Skipping."
@@ -20,7 +20,8 @@ function installHermit()
   msg_prompt "Font located in ~/Library/Fonts"
 }
 
-function install_and_apply_font(){
+function install_and_apply_font()
+{
   msg_prompt "Installing Hermit Font"
   installHermit
   msg_done "Done Installing"
