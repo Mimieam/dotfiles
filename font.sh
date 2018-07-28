@@ -1,12 +1,12 @@
 #!/bin/bash
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
 # get parent file of the current directory
 SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+# import dependencies
 source $SRC_DIR/log.sh
-msg_config $SRC_DIR/log.sh
+source $SRC_DIR/set_colors.sh
 
+
+msg_config $SRC_DIR/log.sh
 
 function installHermit()
 {
@@ -14,17 +14,20 @@ function installHermit()
   # stream to tar without downloading to disk and unzip to the target location :)
   wget -qO - https://pcaro.es/d/otf-hermit-1.21.tar.gz | tar xvz -C ~/.font/hermit
   echo "Donwload and unpacking to ~/.font/hermit"
-  rsync -rv ~/.font/hermit/ ~/.font/tmp/ --exclude="LICENSE"
+  rsync -rv ~/.font/hermit/ /Users/$USER/Library/Fonts --exclude="LICENSE"
+
   echo "Installing to /Users/$USER/Library/Fonts"
 }
 
 
 echo "Installing Hermit Font"
 installHermit
-echo "Done Installing"
+msg_done "Done Installing"
+msg_config "Applying font"
+set_font "Hermit medium" 20
 
 
 if [[ `uname` == 'Darwin' ]]; then
-  msg_og 'Done  '
+  msg_done 'Done  Setting up font'
   # link "$dotfiles/sublime/Packages/User/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
 fi
