@@ -1,0 +1,30 @@
+[user]
+	name = Vinicius Souza
+	email = vinicius@codemakers.com.br 
+[color]
+    diff = auto
+    status = auto
+    ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added     = cyan bold
+	branch    = cyan bold
+	changed   = magenta bold
+	deleted   = red bold
+	untracked = yellow bold
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[credential]
+    helper = osxkeychain
+    useHttpPath = true

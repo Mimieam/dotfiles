@@ -1,0 +1,18 @@
+[submodule "inspiration/dotfiles"]
+	path = inspiration/dotfiles
+	url = git@github.com:vsouza/dotfiles.git
+[submodule "inspiration/vsouza_dotfiles"]
+	path = inspiration/vsouza_dotfiles
+	url = git@github.com:vsouza/dotfiles.git
+[submodule "inspiration/paulmillr_dotfiles"]
+	path = inspiration/paulmillr_dotfiles
+	url = git@github.com:paulmillr/dotfiles.git
+[submodule "inspiration/paulirish_dotfiles"]
+	path = inspiration/paulirish_dotfiles
+	url = git@github.com:paulirish/dotfiles.git
+[submodule "inspiration/janmoeson_dotfiles"]
+	path = inspiration/janmoeson_dotfiles
+	url = git@github.com:janmoesen/tilde.git
+[submodule "inspiration/mathiasbynens_dotfiles"]
+	path = inspiration/mathiasbynens_dotfiles
+	url = git@github.com:mathiasbynens/dotfiles.git
