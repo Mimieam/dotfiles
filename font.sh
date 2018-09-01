@@ -1,10 +1,14 @@
 #!/bin/bash
-# get parent file of the current directory
+
+# get parent directory of the current file
 SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 # import dependencies
 source $SRC_DIR/set_colors.sh
 source $SRC_DIR/log.sh
 
+ask "Would you like to install Font Hermit?(Y/n)"
+read answer
+[[ "$answer" != 'Y' ]] && msg 'Exiting...' && exit 1
 
 function installHermit()
 {
